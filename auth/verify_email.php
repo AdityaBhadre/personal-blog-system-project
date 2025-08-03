@@ -1,17 +1,21 @@
 <?php
 require '../config/db.php';
 
+$error = "";
+$success = "";
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
 
     $stmt = $conn->prepare("UPDATE users SET `is_verified` = 1, `verification_token` = NULL WHERE `verification_token` = '$token'");
 
     if ($stmt->execute() && $stmt->rowCount() > 0) {
-        echo "✅ Email verified successfully!";
+        $succes = "✅ Email verified successfully! Please Log in.";
     } else {
-        echo "❌ Invalid or expired token.";
+        $error = "❌ Invalid or expired token.";
     }
 } else {
-    echo "⚠️ No token provided.";
+    $error = "⚠️ No token provided.";
 }
+
+header("referesh:5;url: login.php");
 ?>

@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.blog-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.blog-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.blog-meta {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+a.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a.read-more:hover {
+    text-decoration: underline;
+}

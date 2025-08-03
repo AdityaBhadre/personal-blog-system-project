@@ -15,7 +15,7 @@ function sendVerificationEmail($email, $token) {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'adityabhadre18@gmail.com';      // your Gmail
-        $mail->Password   = 'wqim lxul batv budy';         // your App Password
+        $mail->Password   = '';         // your App Password
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
@@ -29,7 +29,7 @@ function sendVerificationEmail($email, $token) {
         $mail->Body    = "
             <h4>Thank you for registering!</h4>
             <p>Click the link below to verify your email:</p>
-            <a href='http://localhost/personal-blog-system-project/auth/verify_email.php?token=$token'>Verify Email</a>
+            <a href='http://localhost/personal-blog-system-project/auth/verify_email.php?token= <?php echo $token;?>'>Verify Email</a>
         ";
 
         $mail->send();
